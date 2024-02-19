@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - affiche une phrase
+ * main - affiche une phrase avec puts
  *
- * Return: 1 if the number is positive. 0 otherwise
+ * Return: 0 si tout se passe bien
  */
 int main(void)
 {
