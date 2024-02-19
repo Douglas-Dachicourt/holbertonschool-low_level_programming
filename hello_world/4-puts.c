@@ -1,8 +1,12 @@
 #include <stdio.h>
 
-int main(void)
+/*début du code*/ 
+
+int main(void) /*Fonction main obligatoire*/
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+
+	puts("\"Programming is like building a multilingual puzzle");
+
+	return (0);
 
 }
