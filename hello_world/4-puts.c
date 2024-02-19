@@ -1,15 +1,22 @@
 #include <stdio>
-
 /**
-* main function is following
+*déclaration de la librairie
 */
 
 int main(void)
 {
+/**
+* main function
+*/
 
-	puts("\"Programming is like building a multilingual puzzle\n");
+/**
+*fonction puts
+*/
+puts("\"Programming is like building a multilingual puzzle\n");
 
-	return (0);
-
+/**
+*fonction qui retourne 0
+*/
+return (0);
 
 }
