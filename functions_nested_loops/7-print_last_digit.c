@@ -7,19 +7,20 @@
  */
 int print_last_digit(int n)
 {
-	int d;
+	int d, e, result;
 
-	if (n > 0)
+	if (n >= 0)
 	{
 		d = n % 10;
-		_putchar('0' + d);
-	} else if (n < 0)
+		result = _putchar('0' + d);
+		return (result);
+	}
+	else
 	{
 		n = -(n);
-		d = n % 10;
-		_putchar('0' + d);
-	} else
-		_putchar('0');
-
+		e = n % 10;
+		result = _putchar('0' + e);
+		return (result);
+	}
 	return (0);
 }
