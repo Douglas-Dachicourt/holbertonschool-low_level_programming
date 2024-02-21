@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _islower - fonction
+ * @c: paramètre a tester
  *
  * Return: 1 si c est lowercase sinon return 0
  */
