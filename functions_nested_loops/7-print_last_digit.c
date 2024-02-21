@@ -5,24 +5,22 @@
  *
  * Return: 0 si tout se déroule bien
  */
-int print_last_digit(int r)
+int print_last_digit(int n)
 {
 	int d;
 
-	if (r > 0)
+	if (n > 0)
 	{
-		d = r % 10;
-		_putchar('0' + d);
-	} else if (r < 0)
+		d = n % 10;
+		return (_putchar('0' + d));
+	} else if (n < 0)
 	{
-		r = -(r);
-		d = r % 10;
-		_putchar('0' + d);
-
+		n = -(n);
+		d = n % 10;
+		return (_putchar('0' + d));
 	} else
-		_putchar('0');
+		return (_putchar('0'));
 
 	return (0);
 }
 
-/* return (_putchar('0' + d)); */
