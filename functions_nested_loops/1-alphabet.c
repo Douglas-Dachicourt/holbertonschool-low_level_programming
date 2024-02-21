@@ -1,11 +1,15 @@
 #include "main.h"
 /**
- * main - fonction oblig
+ * print_alphabet - print l'alphabet
  *
- * Return: 0 si tout se passe bien
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		_putchar(c);
+	}
+	_putchar('\n');
 }
