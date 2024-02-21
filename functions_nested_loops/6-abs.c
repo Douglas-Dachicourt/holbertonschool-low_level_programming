@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _abs - afficher la valeur absolue d'un entier
+ * @r: entier a tester
  *
  * Return: 0 si tout va bien
  */
