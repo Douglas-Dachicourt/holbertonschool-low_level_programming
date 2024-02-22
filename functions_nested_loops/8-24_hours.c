@@ -1,22 +1,22 @@
 #include "main.h"
 /**
- * jack_baueur - fonction qui énumère les minutes en 24H
+ * jack_bauer - fonction qui énumère les minutes en 24H
  *
  *
  */
 void jack_bauer(void)
 {
-int i;
-char c;
 
-for (i = 0; i < 60; i++)
+int i, j;
+
+for (i = 0; i < 24; i++)
 {
-	_putchar('\n');
-
-	for (c = 48; c <= 53; c++)
+	for (j = 0; j < 60; j++)
 	{
-		_putchar(c);
+		_putchar('0'+ i);
+		_putchar(':');
+		_putchar('0' + j);
+		_putchar('\n');
 	}
 }
-
 }
