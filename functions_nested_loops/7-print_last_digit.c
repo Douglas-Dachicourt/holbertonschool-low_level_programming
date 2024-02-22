@@ -23,23 +23,3 @@ int print_last_digit(int n)
 	}
 	return (d);
 }
-
-
-/**
-char d, e;
-	int result;
-
-	if (n >= 0)
-	{
-		d = n % 10;
-		result = _putchar('0' + d);
-		return (result);
-	}
-	else
-	{
-		n = -(n);
-		e = n % 10;
-		result = _putchar('0' + e);
-	}
-
-*/
