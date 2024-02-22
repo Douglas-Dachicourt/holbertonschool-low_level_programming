@@ -1,5 +1,6 @@
 #include "main.h"
 #include "6-abs.c"
+#include <stdlib.h>
 /**
  * print_last_digit - imprime le dernier chiffre de l'entier
  * @n: parametre a tester
@@ -13,6 +14,7 @@ int print_last_digit(int n)
 	d = _abs(n) % 10;
 
 	_putchar('0' + d);
+
 	return (d);
 
 }
