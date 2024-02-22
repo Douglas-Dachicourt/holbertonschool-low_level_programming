@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 /**
  * print_to_98 - imprime les nombre de n à 98
  * @n: entier de départ n choisi par l'utilisateur
@@ -11,7 +10,7 @@ void print_to_98(int n)
 {
 	int i, j;
 
-	if (n > 98)
+	if (n > 98 || n < -98)
 	{
 		for (j = n; j >= 98; j--)
 		{
@@ -23,7 +22,6 @@ void print_to_98(int n)
 			printf(" ");
 		}
 	}
-
 	for (i = n; i <= 98; i++)
 	{
 		printf("%d", i);
