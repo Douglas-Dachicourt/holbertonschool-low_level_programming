@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * print_to_98 - imprime les nombre de n à 98
  * @n: entier de départ n choisi par l'utilisateur
