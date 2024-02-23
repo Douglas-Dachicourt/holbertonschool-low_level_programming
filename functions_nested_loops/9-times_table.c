@@ -14,28 +14,25 @@ for (i = 0; i <= 9; i++)
 
 		if(m > 9)
 		_putchar('0' + c);
+
 		_putchar('0' + d);
 
 		if (j < 9)
 		_putchar(',');
 
 	    if ((i == 2 && j < 4) || (i == 3 && j < 3)
-		|| ((i == 0 || i == 1) && (j < 9)) || (i == 4 && j < 2))
+		|| ((i == 0 || i == 1) && (j < 9)) || (i == 4 && j < 2) || (j < 1))
 		{
 			_putchar(' ');
 			_putchar(' ');
+
 		} else if ((i == 2 && j >= 4) || (i == 3 && j >= 3)
 		|| (i == 4 && j >= 2))
 		{
 			_putchar(' ');
-		}
-		else
+		} else
 		{
-			if (j < 1)
-			{
-				_putchar(' ');
-			    _putchar(' ');
-			} else if (j >= 1)
+			if(j >= 1)
 				_putchar(' ');
 		}
 	}
