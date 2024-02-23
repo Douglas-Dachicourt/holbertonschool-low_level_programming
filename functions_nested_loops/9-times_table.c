@@ -15,12 +15,12 @@ for (i = 0; i <= 9; i++)
 		int m = i * j, c = m / 10, d = m % 10;
 
 		if (m > 9)
-		_putchar('0' + c);
+			_putchar('0' + c);
 
 		_putchar('0' + d);
 
 		if (j < 9)
-		_putchar(',');
+			_putchar(',');
 
 	    if ((i == 2 && j < 4) || (i == 3 && j < 3) ||
 			((i == 0 || i == 1) && (j < 9)) || (i == 4 && j < 2) || (j < 1))
