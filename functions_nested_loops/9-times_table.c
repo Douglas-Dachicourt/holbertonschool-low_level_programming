@@ -2,6 +2,8 @@
 /**
  * times_table - fonction multiply tables
  * @m: parametre multiplication
+ * @c: parametre pour l'obtention du premier chiffre
+ * @d: parametre pour l'obtention du deuxieme chiffre
  *
  */
 void times_table(void)
