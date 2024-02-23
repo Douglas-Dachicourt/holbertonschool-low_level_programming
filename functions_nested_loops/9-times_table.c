@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * times_table - fonction multiply tables
- * @m: parametre de multiplication
+ * @m: parametre multiplication
  *
  */
 void times_table(void)
@@ -22,7 +22,7 @@ for (i = 0; i <= 9; i++)
 		if (j < 9)
 			_putchar(',');
 
-			if ((i == 2 && j < 4) || (i == 3 && j < 3) ||
+		if ((i == 2 && j < 4) || (i == 3 && j < 3) ||
 			((i == 0 || i == 1) && (j < 9)) || (i == 4 && j < 2) || (j < 1))
 		{
 			_putchar(' ');
