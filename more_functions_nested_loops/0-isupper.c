@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * -isupper - fct qui vérifie si c est maj ou non
+ * _isupper - fct qui vérifie si c est maj ou non
  * @c: le parametre testé
  *
  * Return: 1 si c'est une maj, 0 si ce n'est pas le cas
