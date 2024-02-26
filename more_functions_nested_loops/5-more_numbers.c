@@ -14,8 +14,14 @@ void more_numbers(void)
 			int d = j / 10;
 			int m = j % 10;
 
-			_putchar('0' + d);
-			_putchar('0' + m);
+			if (j <= 14)
+			{
+				if (j > 9)
+				{
+					_putchar('0' + d);
+				}
+				_putchar('0' + m);
+			}
 		}
 	_putchar('\n');
     }
