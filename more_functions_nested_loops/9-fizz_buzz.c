@@ -10,10 +10,12 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if ((i % 3 == 0) && (i % 5) == 0){
+		if ((i % 3 == 0) && (i % 5) == 0)
+		{
 			printf("FizzBuzz");
 			printf(" ");
-		} else
+		}
+		else
 		{
 			if (i % 3 == 0)
 			{
