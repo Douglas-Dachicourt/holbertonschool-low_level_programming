@@ -23,8 +23,14 @@ int main(void)
 				printf(" ");
 			} else if (i % 5 == 0)
 			{
-				printf("Buzz");
-				printf(" ");
+				if (i != 100)
+				{
+					printf("Buzz");
+					printf(" ");
+				} else
+				{
+					printf("Buzz");
+				}
 			} else
 			{
 				printf("%d", i);
