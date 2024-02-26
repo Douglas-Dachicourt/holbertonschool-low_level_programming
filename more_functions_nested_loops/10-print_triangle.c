@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * print_triangle -
- *
+ * print_triangle - triangle de #
+ * @size: parametre de la fct
  *
  */
 void print_triangle(int size)
