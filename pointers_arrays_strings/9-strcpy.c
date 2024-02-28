@@ -1,11 +1,10 @@
 #include "main.h"
-#include "3-puts.c"
 #include "2-strlen.c"
 #include "_putchar.c"
 /**
- * _strcpy -
- * @dest:
- * @src:
+ * _strcpy - fct qui recopie la string
+ * @dest: pointeur de retour pour la copie recherchée
+ * @src: source initiale à copier
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -14,7 +13,9 @@ char *_strcpy(char *dest, char *src)
 
 	for (i = 0; i <= l; i++)
 	{
+		dest = src;
 
+		_putchar(*(dest + i));
 	}
-return 0;
+return (dest);
 }
