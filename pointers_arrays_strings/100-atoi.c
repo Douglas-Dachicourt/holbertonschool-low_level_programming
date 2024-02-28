@@ -1,10 +1,10 @@
 #include "main.h"
 #include "2-strlen.c"
 /**
- * _atoi -
- * @s:
+ * _atoi - fct qui transforme une chaine de caractere en entier
+ * @s: string à convertir
  *
- *
+ * Return: la valeur de l'entier recherché
  */
 int _atoi(char *s)
 {
