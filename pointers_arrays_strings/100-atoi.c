@@ -9,13 +9,13 @@
 int _atoi(char *s)
 {
 	int i;
-	int n = 0;
+	unsigned int n = 0;
 	int l = _strlen(s);
 	int signe;
 	int p = 0;
 	int m = 0;
 
-	for (i = 0; i <= (l); i++)
+	for (i = 0; i <= (l - 1); i++)
 	{
 		if (s[i] == '+')
 		{
