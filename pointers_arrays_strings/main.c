@@ -8,11 +8,13 @@
  */
 int main(void)
 {
-	int nb;
+    int nb;
 
-    nb = _atoi("+++++ +-+ 2242454");
+	nb = _atoi("+++++ +-+ 2242454");
     printf("%d\n", nb);
-    nb = _atoi("-40");
+	nb = _atoi("98");
+    printf("%d\n", nb);
+    nb = _atoi("98");
     printf("%d\n", nb);
     nb = _atoi("-402");
     printf("%d\n", nb);
