@@ -1,5 +1,6 @@
 #include "main.h"
 #include "2-strlen.c"
+#include "_putchar.c"
 /**
  * _atoi - fct qui transforme une chaine de caractere en entier
  * @s: string à convertir
@@ -9,25 +10,31 @@
 int _atoi(char *s)
 {
 	int i;
-	unsigned int n = 0;
+	int n = 0;
 	int l = _strlen(s);
-	int signe = 1;
+	int signe;
+	int p = 0;
 	int m = 0;
-	int result;
 
 	for (i = 0; i <= (l - 1); i++)
 	{
-		if (s[i] == '-')
+		if (s[i] == '+')
+		{
+			p++;
+		} else if (s[i] == '-')
 		{
 			m++;
-			signe *= -1;
 		}
-
-		if ((s[i] >= '0' && s[i] <= '9'))
+		if (p > m || p == m){
+			signe = 1;
+		} else
 		{
-			n = ((n * 10) + (s[i] - '0'));
-			result = signe * n;
+			signe = -1;
+		}
+		if (s[i] >= '0' && s[i] <= '9' && s[i] != ' ')
+		{
+			n = n * 10 + (s[i] - '0');
 		}
 	}
-return (result);
+return (signe * n);
 }
