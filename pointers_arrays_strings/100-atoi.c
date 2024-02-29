@@ -11,28 +11,25 @@ int _atoi(char *s)
 	int i;
 	unsigned int n = 0;
 	int l = _strlen(s);
-	int signe;
-	int p = 0;
+	int signe = 1;
 	int m = 0;
+	int result;
 
 	for (i = 0; i <= (l - 1); i++)
 	{
-		if (s[i] == '+')
-		{
-			p++;
-		} else if (s[i] == '-')
+		if (s[i] == '-')
 		{
 			m++;
-		}
-		if (p > m || p == m)
-			signe = 1;
-		else
-			signe = -1;
+			signe *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		} else if ((s[i] >= '0' && s[i] <= '9'))
 		{
 			n = ((n * 10) + (s[i] - '0'));
+		} else {
+			break;
 		}
 	}
-return (signe * n);
+result = signe * n;
+
+return (result);
 }
