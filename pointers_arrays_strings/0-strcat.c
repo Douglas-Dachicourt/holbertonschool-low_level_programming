@@ -9,14 +9,21 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i;
-	int len = _strlen(dest);
+	int len_src = _strlen(src);
+	int i, j;
 
-	for (i = 0; i <= len; i++)
+	/*je cherche la fin du caractère de la chaine de destination*/
+	for (i = 0; dest[i] != '\0'; i++)
+	;
+
+	/*je parcoure la chaine source dans sa longueur*/
+	for (j = 0; j <= len_src; j++)
 	{
-		if (dest[i] == '\0')
-			dest[i] = dest[i] + src[i] + '\0';
+	/*je copie à partir du '\0' de i, ma chaîne source*/
+		dest[i] = src[j];
+	/*on incrémente i pour placer les caractères de j au bon index */
+		i++;
+	}
 
-}
 	return (dest);
 }
