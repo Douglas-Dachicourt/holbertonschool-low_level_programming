@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int i;
-	int n = 0;
+	unsigned n = 0;
 	int l = _strlen(s);
 	int signe;
 	int p = 0;
