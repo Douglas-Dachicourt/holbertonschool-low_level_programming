@@ -14,14 +14,13 @@ int _atoi(char *s)
 	int signe;
 	int p = 0;
 	int m = 0;
-	int min = -2147483648;
 
-	for (i = 0; i <= (l - 1); i++)
+	for (i = 0; i <= (l); i++)
 	{
 		if (s[i] == '+')
 		{
 			p++;
-		} else if (s[i] == '-' || s[i] == min)
+		} else if (s[i] == '-')
 		{
 			m++;
 		}
@@ -32,7 +31,7 @@ int _atoi(char *s)
 
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			n = n * 10 + (s[i] - '0');
+			n = ((n * 10) + (s[i] - '0'));
 		}
 	}
 return (signe * n);
