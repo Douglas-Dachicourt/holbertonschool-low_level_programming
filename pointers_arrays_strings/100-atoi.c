@@ -21,15 +21,13 @@ int _atoi(char *s)
 		{
 			m++;
 			signe *= -1;
+		}
 
-		} else if ((s[i] >= '0' && s[i] <= '9'))
+		if ((s[i] >= '0' && s[i] <= '9'))
 		{
 			n = ((n * 10) + (s[i] - '0'));
-		} else {
-			break;
+			result = signe * n;
 		}
 	}
-result = signe * n;
-
 return (result);
 }
