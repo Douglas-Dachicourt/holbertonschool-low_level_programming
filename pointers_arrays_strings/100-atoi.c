@@ -1,6 +1,5 @@
 #include "main.h"
 #include "2-strlen.c"
-#include "_putchar.c"
 /**
  * _atoi - fct qui transforme une chaine de caractere en entier
  * @s: string à convertir
@@ -25,7 +24,8 @@ int _atoi(char *s)
 		{
 			m++;
 		}
-		if (p > m || p == m){
+		if (p > m || p == m)
+		{
 			signe = 1;
 		} else
 		{
