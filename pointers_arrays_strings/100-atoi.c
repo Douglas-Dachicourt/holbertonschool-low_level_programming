@@ -1,6 +1,5 @@
 #include "main.h"
 #include "2-strlen.c"
-#include "_putchar.c"
 /**
  * _atoi - fct qui transforme une chaine de caractere en entier
  * @s: string à convertir
