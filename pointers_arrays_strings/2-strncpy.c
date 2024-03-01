@@ -18,9 +18,12 @@ char *_strncpy(char *dest, char *src, int n)
 /*je copie dans dest les char souhaités (soit jusqu'à n)*/
 		dest[i] = src[i];
 	}
-/*si la longueur de la source est < à n, je termine la chaine avec le '\0'*/
-		if (i < n)
+/*si la longueur de la source est < à n, je termine la boucle avec le '\0'*/
+		for (; i < n; i++)
+		{
 			dest[i] = '\0';
+		}
+
 
 return (dest);
 }
