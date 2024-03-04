@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stddef.h>
 /**
  * _strchr - fct qui imprime les char à partir de la 1ère occurence voulue
  * @s: chaine de char à tester
