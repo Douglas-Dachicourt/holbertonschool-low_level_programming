@@ -1,23 +1,23 @@
 #include "main.h"
-#include "2-strlen.h"
 /**
- * _strchr -
- * @s:
- * @c:
- * Return:
+ * _strchr - fct qui imprime les char à partir de la 1ère occurence voulue
+ * @s: chaine de char à tester
+ * @c: imprimer à partir de ce char (1ère occurence)
+ * Return: le résultat souhaité via le pointeur s
  */
 char *_strchr(char *s, char c)
 {
 	int i;
 
-	int l = _strlen(s);
-
-	for (i = 0; i < l; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
 		{
-			s[i] += s[i + 1];
+			return (&s[i]);
+		} else if (s[i] != c)
+		{
+			return (NULL);
 		}
 	}
-	return (s);
+return (s);
 }
