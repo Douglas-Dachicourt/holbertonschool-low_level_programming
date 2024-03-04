@@ -1,4 +1,5 @@
 #include "main.h"
+#include "2-strlen.h"
 /**
  * _strchr -
  * @s:
@@ -9,11 +10,13 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	int l = _strlen(s);
+
+	for (i = 0; i < l; i++)
 	{
 		if (s[i] == c)
 		{
-
+			s[i] += s[i + 1];
 		}
 	}
 	return (s);
