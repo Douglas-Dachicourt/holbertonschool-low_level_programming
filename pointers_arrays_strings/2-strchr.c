@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * _strchr - fct qui imprime les char à partir de la 1ère occurence voulue
  * @s: chaine de char à tester
@@ -12,9 +13,7 @@ char *_strchr(char *s, char c)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
-		{
 			return (&s[i]);
-		}
 	}
-	return (0);
+	return NULL;
 }
