@@ -1,9 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_diagsums - additionner les nb d'une diagonale
- * @a: index à matcher par rapport à i
- * @size: taille du tableau
+ * print_diagsums - additionner les nb des 2 diagonales dans un tab bi-dimens
+ * @a: valeur du tab à matcher via l'index // a[0], a[4] etc ...
+ * @size: nb d'éléments commun par ligne/colonne
  */
 void print_diagsums(int *a, int size)
 {
