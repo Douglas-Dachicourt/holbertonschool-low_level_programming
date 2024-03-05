@@ -8,11 +8,13 @@
  */
 int main(void)
 {
-    char *s = "hello, world";
-    char *f = "hello, ";
-    char *t;
+    int c3[3][3] = {
+        {0, 1, 5},
+        {10, 11, 12},
+        {1000, 101, 102},
+    };
 
-    t = _strstr(s, f);
-    printf("%s\n", t);
+    print_diagsums((int *)c3, 3);
+
     return (0);
 }
