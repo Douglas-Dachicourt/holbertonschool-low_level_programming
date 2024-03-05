@@ -18,6 +18,7 @@ void print_diagsums(int *a, int size)
 	}
 	printf("%d, ", sum_1);
 	printf("%d ", sum_2);
+	printf("\n");
 }
 /*
  * DIAGONALE GAUCHE
