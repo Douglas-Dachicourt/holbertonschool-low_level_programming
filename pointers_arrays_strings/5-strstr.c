@@ -18,6 +18,8 @@ char *_strstr(char *haystack, char *needle)
 			{
 				return (&needle[i]);
 			}
+			if (needle[i] == '\0')
+				return (NULL);
 		}
 		return (NULL);
 	}
