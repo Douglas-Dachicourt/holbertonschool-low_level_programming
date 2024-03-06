@@ -10,16 +10,19 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j;
 
-	for (i = 0; needle[i] != '\0'; i++)
+/* je parcoure la chaine source*/
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (j = 0; haystack[j] != '\0'; j++)
+	/* je parcoure la chaine sub et src aux indice i et j pour comparaison*/
+		for (j = 0; needle[j] != '\0' && haystack[i + j] != '\0'; j++)
 		{
-			if (haystack[j] == needle[i])
+			if (needle[j] != haystack[i + j])
 			{
-				return (&needle[i]);
+				break;
 			}
 		}
-		return (NULL);
+		if (needle[j] == '\0')
+			return (haystack + i);
 	}
-	return (needle);
+	return (NULL);
 }
