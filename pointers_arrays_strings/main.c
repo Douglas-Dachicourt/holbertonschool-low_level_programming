@@ -8,11 +8,14 @@
  */
 int main(void)
 {
-    char *s = "First, solve the problem. Then, write the code.";
-    char *f = "the";
-    char *t;
+    char *s = "hello";
+    char *f;
 
-    t = _strstr(s, f);
-    printf("%s\n", t);
+    f = _strchr(s, 'l');
+
+    if (f != NULL)
+    {
+        printf("%s\n", f);
+    }
     return (0);
 }
