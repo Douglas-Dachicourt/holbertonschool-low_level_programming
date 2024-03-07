@@ -8,18 +8,18 @@
  */
 int main(int argc, char *argv[])
 {
-	int multiply;
-	char err[] = "Error";
+	int i, multiply;
 
-	multiply = (atoi(argv[1])) * (atoi(argv[2]));
-
-	if (argc > 2 && argv[1] && argv[2])
+	for (i = 0; i < argc; i++)
 	{
-		printf("%d\n", multiply);
-		return (0);
+		if (argv[1] && argv[2])
+		{
+			multiply = (atoi(argv[1])) * (atoi(argv[2]));
+			printf("%d\n", multiply);
+			return (0);
+		}
+		printf("Error\n");
+		return (-1);
 	}
-	printf("%s\n", err);
-	return (-1);
-
 return (0);
 }
