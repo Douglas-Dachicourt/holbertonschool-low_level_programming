@@ -19,14 +19,13 @@ int main(int argc, char *argv[])
 	{
 		num = atoi(argv[i]);
 		sum = sum + num;
-	}
 
-	if (!num)
-	{
-		printf("Error\n");
-	return (1);
+		if (!num || (num - 1))
+		{
+			printf("Error\n");
+		return (1);
+		}
 	}
-
 	printf("%d\n", sum);
 return (0);
 }
