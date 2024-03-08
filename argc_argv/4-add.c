@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - fct qui
  * @argc: nb d'arguments
@@ -8,22 +9,25 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, num, sum = 0;
+	int i, j, num, sum = 0;
 
-	if (!argv[0])
+	if (argc < 1)
 	{
 		printf("0\n");
 	}
 
 	for (i = 1; i < argc; i++)
 	{
-		num = atoi(argv[i]);
-		sum = sum + num;
-
-		if (!num || (num - 1))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-		return (1);
+			num = atoi(argv[i]);
+
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+			return (1);
+			}
+		sum = sum + num;
 		}
 	}
 	printf("%d\n", sum);
