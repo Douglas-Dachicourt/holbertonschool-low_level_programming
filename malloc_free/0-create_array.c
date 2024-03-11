@@ -32,5 +32,9 @@ char *create_array(unsigned int size, char c)
 	{
 		array[i] = c;
 	}
+
+	/*je libère la mémoire allouée*/
+	free(array);
+
 	return (array);
 }
