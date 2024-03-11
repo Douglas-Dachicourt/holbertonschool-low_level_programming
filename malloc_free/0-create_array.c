@@ -32,7 +32,7 @@ char *create_array(unsigned int size, char c)
 	{
 		array[i] = c;
 	}
+	array[size] = '\0';
+
 	return (array);
-	/*je libère la mémoire allouée*/
-	free(array);
 }
