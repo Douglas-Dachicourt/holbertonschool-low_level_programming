@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 /**
  * _strdup - fct qui copie une string à l'identique usant de la mémoire dynam
  * @str: string à copier
@@ -8,10 +7,15 @@
  **/
 char *_strdup(char *str)
 {
-	unsigned int i;
+	unsigned int i, j = 0;
 	char *new_str;
 
-	new_str = malloc(strlen(str) + 1);
+	while (str[j] != '\0')
+	{
+		j++;
+	}
+
+	new_str = malloc((j + 1));
 
 	if (!str)
 	{
