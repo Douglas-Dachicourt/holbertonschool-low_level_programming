@@ -1,16 +1,24 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * str_concat -
- * @s1:
- * @s2:
- * Return:
+ * str_concat - fct qui concatène deux str avec alloc dynamique
+ * @s1: str 1
+ * @s2: str 2
+ * Return: pointeur vers le résultat
  */
 char *str_concat(char *s1, char *s2)
 {
 	unsigned int i = 0, j = 0, k, l;
 	char *concat;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	/*je parcoure s1 pour connaitre sa longueur*/
 	while (s1[i] != '\0')
 	{
@@ -26,7 +34,6 @@ char *str_concat(char *s1, char *s2)
 
 	if (concat == NULL)
 		return (NULL);
-
 	/*je boucle sur s1 pour copier dans concat son contenu*/
 	for (k = 0; s1[k] != '\0'; k++)
 	{
@@ -39,5 +46,5 @@ char *str_concat(char *s1, char *s2)
 	}
 	concat[k + l] = '\0';
 
-return concat;
+return (concat);
 }
