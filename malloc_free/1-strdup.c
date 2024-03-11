@@ -7,10 +7,15 @@
  **/
 char *_strdup(char *str)
 {
-	int i;
+	unsigned int i;
 	char *new_str;
 
 	new_str = malloc(sizeof(str));
+
+	if (!str)
+	{
+		return (NULL);
+	}
 
 	if (new_str == NULL)
 	{
