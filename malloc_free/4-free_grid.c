@@ -7,18 +7,12 @@
  */
 void free_grid(int **grid, int height)
 {
-	int i, j;
-
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < i; j++)
-		{
-			grid[i][j] = 0;
-		}
-	}
+	int i;
+	/*je libère la mémoire de chaque ligne de mon tableau*/
 	for (i = 0; i < height; i++)
 	{
 		free(grid[i]);
 	}
+	/*je libère la mémoire de mon tableau de pointeurs*/
 	free(grid);
 }
