@@ -1,9 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * free_grid -
- * @grid:
- * @height:
+ * free_grid - fct qui libere la mémoire dun tableau 2D
+ * @grid: tableau 2D
+ * @height: hauteur du tableau
  */
 void free_grid(int **grid, int height)
 {
@@ -11,10 +11,14 @@ void free_grid(int **grid, int height)
 
 	for (i = 0; i < height; i++)
 	{
-		for (j = 0; i < j; j++)
+		for (j = 0; j < i; j++)
 		{
-			free(grid[i]);
-			free(grid[j]);
+			grid[i][j] = 0;
 		}
 	}
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
 }
