@@ -8,26 +8,27 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int i;
+	int i, j;
 	int **array;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	/*j'alloue de la mémoire pour le tableau de pointeurs des lignes*/
 	array = malloc(height * sizeof(int *));
 
 	if (array == NULL)
 		return (NULL);
-	/*je boucle sur ma longeur de ligne*/
+
 	for (i = 0; i < height; i++)
 	{
-		/*j'alloue de la mémoire pour les colonnes par ligne et par case*/
 		array[i] = malloc(width * sizeof(int));
 
 		if (array[i] == NULL)
 		{
-			return (NULL);
+			for (j = 0; j < i; j++)
+			{
+				free(array[i]);
+			}
 		}
 	}
 	return (array);
