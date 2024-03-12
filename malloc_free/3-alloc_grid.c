@@ -15,15 +15,15 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 
 	/*j'alloue de la mémoire pour le tableau de pointeurs des lignes*/
-	array = malloc(width * sizeof(int *));
+	array = malloc(height * sizeof(int *));
 
 	if (array == NULL)
 		return (NULL);
 	/*je boucle sur ma longeur de ligne*/
-	for (i = 0; i < width; i++)
+	for (i = 0; i < height; i++)
 	{
 		/*j'alloue de la mémoire pour les colonnes par ligne et par case*/
-		array[i] = malloc(height * sizeof(int));
+		array[i] = malloc(width * sizeof(int));
 
 		if (array[i] == NULL)
 		{
