@@ -9,20 +9,21 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	unsigned int *array;
+	unsigned long long *array;
+
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
 
-	array = malloc(nmemb * size);
+	unsigned long long full_size = (unsigned long long)nmemb * size;
+
+	array = malloc(full_size);
 
 	if (array == NULL)
 		return (NULL);
 
 	for (i = 0; i < nmemb; i++)
 		array[i] = 0;
-
-	free(array);
 
 	return (array);
 }
