@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include "0-memset.c"
 /**
  * _calloc - fct qui alloue de la mémoire pour un tableau
  * @nmemb: nombre d'éléments
@@ -8,15 +9,17 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	if (size == 0 || nmemb == 0)
-    	return (NULL);
+void *array;
 
-	void *array = malloc(size * nmemb);
+if (size == 0 || nmemb == 0)
+	return (NULL);
 
-	if (array == NULL)
-    	return (NULL);
+array = malloc(size * nmemb);
 
-	_memset(array, 0, size * nmemb);
+if (array == NULL)
+	return (NULL);
+
+_memset(array, 0, size * nmemb);
 
 return (array);
 }
