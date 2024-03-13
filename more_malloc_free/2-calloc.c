@@ -9,15 +9,15 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	unsigned long long *array;
-
+	unsigned int *array;
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
 
-	unsigned long long full_size = (unsigned long long)nmemb * size;
+	array = malloc(nmemb * size);
 
-	array = malloc(full_size);
+	if (((nmemb * size)/ size) != nmemb)
+		return (NULL);
 
 	if (array == NULL)
 		return (NULL);
