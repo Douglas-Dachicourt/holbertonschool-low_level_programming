@@ -1,4 +1,5 @@
-#include <stdio.h>
+#ifndef __myheader_h
+#define __myheader_h
 /**
  * struct dog - structure/objet
  * @name: Nom du membre
@@ -13,3 +14,4 @@ struct dog
 	float age;
 	char *owner;
 };
+#endif
