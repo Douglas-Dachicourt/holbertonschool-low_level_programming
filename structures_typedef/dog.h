@@ -1,0 +1,15 @@
+#include <stdio.h>
+/**
+ * struct dog - structure/objet
+ * @name: Nom du membre
+ * @age: Age du membre
+ * @owner: Nom du propriétaire
+ *
+ * Description: structure qui récolte les informations d'un chien
+ */
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
