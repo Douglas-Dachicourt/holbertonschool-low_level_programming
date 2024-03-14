@@ -8,11 +8,18 @@
  * @age: le paramètre age à passer
  * @owner: le paramètre du propriétaire
  *
- * Description:
+ * Description: fonction qui permet d'afficher les membres d'une structure
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	if (d != NULL)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	} else
+	{
+		puts("Ok");
+	}
 }
+
