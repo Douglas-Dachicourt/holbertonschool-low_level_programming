@@ -9,15 +9,28 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	/*je définis un nouvel espace*/
 	dog_t *chien;
 
+/*j'alloue l'espace pour mon nouveau chien */
 	chien = malloc(sizeof(dog_t));
 
+/*si cet espace est correctement alloué*/
 	if (chien != NULL)
 	{
-		chien->name = _strdup(*name);
+		/*je copie dans mon chien le nom présent lors de l'appel*/
+		chien->name = _strdup(name);
 
+/*si je n'ai pas de name, je free le membre concerné et la structure en général*/
 		if (chien->name == NULL)
+		{
+			free(chien);
+			return (NULL);
+		}
+
+		chien->owner = _strdup(owner);
+
+		if (chien->owner == NULL)
 		{
 			free(chien->name);
 			free(chien);
@@ -25,15 +38,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 
 		chien->age = age;
-
-		chien->owner = _strdup(*owner);
-
-		if (chien->owner == NULL)
-		{
-			free(chien->owner);
-			free(chien);
-			return (NULL);
-		}
 	} else
 		return (NULL);
 
