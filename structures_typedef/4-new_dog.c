@@ -6,6 +6,7 @@
  * @name: le nom a passer en parametre
  * @age: l'age a passer en parametre
  * @owner: le proprietaire à passer en parametre
+ * Return: le nouveau chien crée
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -32,5 +33,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 	chien->age = age;
 	}
-	return (chien);
+return (chien);
 }
