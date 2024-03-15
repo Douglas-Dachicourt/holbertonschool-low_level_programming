@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include "1-strdup.c"
 /**
  * new_dog -
  * @name:
@@ -14,10 +15,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (chien != NULL)
 	{
-		chien->name = dog_t->name;
-		chien->age = dog_t->age;
-		chien->owner = dog_t->owner;
+		if(chien->name != NULL)
+		{
+			chien_name = _strdup(name);
+		}
+
+		chien->age = age;
+
+		if (chien->owner != NULL)
+		{
+			chien->owner = _strdup(owner);
+		}
 	} else
 		return (NULL);
-return;
+
+return (chien);
 }
