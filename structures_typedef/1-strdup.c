@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdlib.h>
 /**
  * _strdup - fct qui copie une string à l'identique usant de la mémoire dynam
