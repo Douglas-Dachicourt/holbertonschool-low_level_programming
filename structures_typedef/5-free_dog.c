@@ -6,8 +6,9 @@
  */
 void free_dog(dog_t *d)
 {
-	d = malloc(d);
-
-	if (d != NULL)
-		free(d);
+	if (d == NULL)
+	{
+		return (NULL);
+	}
+	free(d);
 }
