@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * op_add - fct qui additionne deux integer et qui en retourne la somme
  * @a: int 1
@@ -53,6 +54,9 @@ int op_div(int a, int b)
 	int division = 1;
 
 	division = a / b;
+
+	if (b == 0)
+		exit(1);
 
 	return (division);
 }
