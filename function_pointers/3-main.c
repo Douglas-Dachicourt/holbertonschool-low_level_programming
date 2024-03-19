@@ -12,21 +12,15 @@ int main(int argc, char *argv[])
 	int num1, num2, result;
 	char operator;
 
-	num1 = atoi(argv[1]);
-	operator = argv[2][0];
-	num2 = atoi(argv[3]);
-
 	if (argc != 4)
 	{
 		puts("Error");
 		exit(98);
 	}
 
-	if (!num2)
-	{
-		puts("Error");
-		exit(99);
-	}
+	num1 = atoi(argv[1]);
+	operator = argv[2][0];
+	num2 = atoi(argv[3]);
 
 	if (operator == 43 || operator == 42 || operator == 45
 	|| operator == 47 || operator == 37)
