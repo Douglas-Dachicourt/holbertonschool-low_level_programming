@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
-	char *op;
+	char operator;
 
 	if (argc != 4)
 	{
@@ -18,11 +18,10 @@ int main(int argc, char *argv[])
 	}
 
 	num1 = atoi(argv[1]);
-	op = argv[2];
+	operator = argv[2][0];
 	num2 = atoi(argv[3]);
 
-	result = get_op_func(op)(num1, num2);
-
+	result = get_op_func(&operator)(num1, num2);
 
 	printf("%d\n", result);
 
