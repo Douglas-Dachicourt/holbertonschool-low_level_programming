@@ -2,28 +2,26 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
- * get_op_func -
- * @s:
- * @int:
- * @int:
- * Return:
+ * get_op_func - fct qui sélect le bon opérateur par rapport à une cdc
+ * @s: cdc
+ * Return: la fonction
  */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
-        {"+", op_add},
-        {"-", op_sub},
-        {"*", op_mul},
-        {"/", op_div},
-        {"%", op_mod},
-        {NULL, NULL}
-    };
+{"+", op_add},
+{"-", op_sub},
+{"*", op_mul},
+{"/", op_div},
+{"%", op_mod},
+{NULL, NULL}
+};
 
-    int i = 0;
+int i = 0;
 
-	while(ops[i].op != NULL)
+	while (ops[i].op != NULL)
 	{
-		if(ops[i].op[0] == *s)
+		if (ops[i].op[0] == *s)
 		{
 			return (ops[i].f);
 		}
