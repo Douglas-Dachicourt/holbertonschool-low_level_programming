@@ -53,10 +53,13 @@ int op_div(int a, int b)
 {
 	int division = 1;
 
-	division = a / b;
-
 	if (b == 0)
-		exit(1);
+	{
+		puts("Error");
+		exit(100);
+	}
+
+	division = a / b;
 
 	return (division);
 }
@@ -69,6 +72,12 @@ int op_div(int a, int b)
 int op_mod(int a, int b)
 {
 	int modul = 1;
+
+	if (b == 0)
+	{
+		puts("Error");
+		exit(100);
+	}
 
 	modul = a % b;
 
