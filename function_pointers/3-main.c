@@ -22,7 +22,22 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	result = get_op_func(&operator)(num1, num2);
+	if (!num2)
+	{
+		puts("Error");
+		exit(99);
+	}
+
+	if (operator == 43 || operator == 42 || operator == 45
+	|| operator == 47 || operator == 37)
+	{
+		result = get_op_func(&operator)(num1, num2);
+	}
+	else
+	{
+		puts("Error");
+		exit(99);
+	}
 
 	printf("%d\n", result);
 
