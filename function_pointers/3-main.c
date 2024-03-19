@@ -14,13 +14,20 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		puts("Error\n");
+		puts("Error");
 		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
 	operator = argv[2][0];
 	num2 = atoi(argv[3]);
+
+	if (operator != '+' || operator != '+' || operator != '+'
+	|| operator != '+')
+	{
+		puts("Error");
+		exit(99);
+	}
 
 	result = get_op_func(&operator)(num1, num2);
 
