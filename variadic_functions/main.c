@@ -1,6 +1,4 @@
 #include "variadic_functions.h"
-#include <stddef.h>
-
 
 /**
  * main - check the code
@@ -9,6 +7,6 @@
  */
 int main(void)
 {
-    print_strings(", ", 4, "Jay", "Django", NULL, "Doug");
+    print_all("ceis", 'B', 3, "stSchool");
     return (0);
 }
