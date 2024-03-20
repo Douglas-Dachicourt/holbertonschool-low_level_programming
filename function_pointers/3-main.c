@@ -12,10 +12,16 @@ int main(int argc, char *argv[])
 	int num1, num2, result;
 	char operator;
 
-	if (argc != 4 || argv[2][1] != 0)
+	if (argc != 4)
 	{
 		puts("Error");
 		exit(98);
+	}
+
+	if (argv[2][1])
+	{
+		puts("Error");
+		exit(99);
 	}
 
 	num1 = atoi(argv[1]);
