@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
-#include <string.h>
 
 typedef struct
 {
@@ -9,10 +8,16 @@ typedef struct
 	void (*f)(void *);
 } t_def;
 
-void p_word(void *print)
+void p_f(void *print)
 {
-	char *cdc = (char *)print;
-	printf("%s", cdc);
+	float f = *(float*)print;
+	printf("%f", f);
+}
+
+void p_c(void *print)
+{
+	char c = *(char *)print;
+	printf("%c", c);
 }
 
 void p_int(void *print)
@@ -21,12 +26,20 @@ void p_int(void *print)
 	printf("%d", num);
 }
 
+void p_word(void *print)
+{
+	char *cdc = (char *)print;
+	printf("%s", cdc);
+}
+
 void print_all(const char * const format, ...)
 {
 const char *temp = format;
 
 	t_def choice[] =
 	{
+		{"c", p_c},
+		{"f", p_f},
 		{"s", p_word},
 		{"i", p_int},
 		{NULL, NULL}
@@ -41,7 +54,7 @@ const char *temp = format;
 
 		while (choice[i].type != NULL)
 		{
-			if (strcmp(choice[i].type, temp) == 0)
+			if (choice[i].type == temp)
 			{
 				void *arg = va_arg(args, void *);
 				choice[i].f(arg);
