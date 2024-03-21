@@ -35,6 +35,7 @@ void p_word(void *print)
 void print_all(const char * const format, ...)
 {
 const char *temp = format;
+int i = 0;
 
 	t_def choice[] =
 	{
@@ -48,23 +49,24 @@ const char *temp = format;
 	va_list args;
 	va_start(args, format);
 
-	while (*temp)
+	while (temp[i] != '\0')
 	{
-		int i = 0;
+		int j = 0;
 
-		while (choice[i].type != NULL)
+		while (choice[j].type != NULL)
 		{
-			if (choice[i].type == temp)
+			if (choice[j].type[0] == temp[i])
 			{
 				void *arg = va_arg(args, void *);
-				choice[i].f(arg);
+				choice[j].f(arg);
 				printf(", ");
 				break;
 			}
-			i++;
+			j++;
 		}
-		temp++;
+		i++;
 	}
 	va_end(args);
 	printf("\n");
 }
+
