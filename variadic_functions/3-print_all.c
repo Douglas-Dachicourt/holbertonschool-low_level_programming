@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
+#include <stddef.h>
 /**
  * print_all - fct qui imprime les argmts en fct de leur type de format
  * @format: le format spécifié à respecter
@@ -32,7 +33,9 @@ void print_all(const char * const format, ...)
 			char *s = va_arg(args, char *);
 
 			if (s != NULL)
+			{
 				printf("%s", s);
+			} else printf("%s", "(nil)");
 
 		} else if (*temp == 'f')
 		{
