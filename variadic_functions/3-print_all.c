@@ -52,9 +52,9 @@ const char *temp = format;
 	{
 		int i = 0;
 
-		while (choice[i].type != NULL)
+		while (*choice[i].type != '\0')
 		{
-			if (choice[i].type == temp)
+			if (*choice[i].type == *temp)
 			{
 				void *arg = va_arg(args, void *);
 				choice[i].f(arg);
