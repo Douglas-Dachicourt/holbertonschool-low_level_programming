@@ -32,7 +32,7 @@ void print_all(const char * const format, ...)
 			char *s = va_arg(args, char *);
 
 			if (s != NULL)
-				printf("%s", s);
+				printf("%s, ", s);
 
 		} else if (*temp == 'f')
 		{
