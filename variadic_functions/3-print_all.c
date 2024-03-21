@@ -19,13 +19,13 @@ void print_all(const char * const format, ...)
 		{
 			int i = va_arg(args, int);
 
-			printf("%d", i);
+			printf("%d, ", i);
 
 		} else if (*temp == 'c')
 		{
 			char c = (char)va_arg(args, int);
 
-			printf("%c", c);
+			printf("%c, ", c);
 
 		} else if (*temp == 's')
 		{
@@ -34,13 +34,13 @@ void print_all(const char * const format, ...)
 			if (s != NULL)
 				printf("%s", s);
 			else
-			printf("%s", "(nil)");
+			printf("%s, ", "(nil)");
 
 		} else if (*temp == 'f')
 		{
 			float f = (float)va_arg(args, double);
 
-			printf("%f", f);
+			printf("%f, ", f);
 		}
 		temp++;
 	}
