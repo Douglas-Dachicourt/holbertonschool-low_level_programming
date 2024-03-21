@@ -4,7 +4,7 @@
 
 typedef struct
 {
-	char type;
+	char *type;
 	void (*f)(void *);
 } t_def;
 
@@ -26,9 +26,9 @@ const char *temp = format;
 
 	t_def choice[] =
 	{
-		{'s', p_word},
-		{'i', p_int},
-		{'\0', NULL}
+		{"s", p_word},
+		{"i", p_int},
+		{NULL, NULL}
 	};
 
 	va_list args;
@@ -38,9 +38,9 @@ const char *temp = format;
 	{
 		int i = 0;
 
-		while (choice[i].type != '\0')
+		while (choice[i].type != NULL)
 		{
-			if (choice[i].type == *temp)
+			if (choice[i].type == temp)
 			{
 				void *arg = va_arg(args, void *);
 				choice[i].f(arg);
