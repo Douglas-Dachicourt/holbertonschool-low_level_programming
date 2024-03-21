@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
+#include <string.h>
 
 typedef struct
 {
@@ -40,7 +41,7 @@ const char *temp = format;
 
 		while (choice[i].type != NULL)
 		{
-			if (choice[i].type == temp)
+			if (strcmp(choice[i].type, temp) == 0)
 			{
 				void *arg = va_arg(args, void *);
 				choice[i].f(arg);
