@@ -43,9 +43,6 @@ void print_all(const char * const format, ...)
 			printf("%f", f);
 		}
 		temp++;
-		if (*temp && (*temp == 's' || *temp == 'c' || *temp == 'i' ||
-		*temp == 'f'))
-			printf(", ");
 	}
 	va_end(args);
 	printf("\n");
