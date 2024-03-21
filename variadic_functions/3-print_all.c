@@ -2,71 +2,38 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
-typedef struct
-{
-	char *type;
-	void (*f)(void *);
-} t_def;
-
-void p_f(void *print)
-{
-	float f = *(float*)print;
-	printf("%f", f);
-}
-
-void p_c(void *print)
-{
-	char c = *(char *)print;
-	printf("%c", c);
-}
-
-void p_int(void *print)
-{
-	int num = *(int *)print;
-	printf("%d", num);
-}
-
-void p_word(void *print)
-{
-	char *cdc = (char *)print;
-	printf("%s", cdc);
-}
-
 void print_all(const char * const format, ...)
 {
-const char *temp = format;
-int i = 0;
-
-	t_def choice[] =
-	{
-		{"c", p_c},
-		{"f", p_f},
-		{"s", p_word},
-		{"i", p_int},
-		{NULL, NULL}
-	};
+	const char *temp = format;
 
 	va_list args;
 	va_start(args, format);
 
-	while (temp[i] != '\0')
+	while (*temp != '\0')
 	{
-		int j = 0;
-
-		while (choice[j].type != NULL)
+		printf(", ");
+		if (*temp == 'i')
 		{
-			if (choice[j].type[0] == temp[i])
-			{
-				void *arg = va_arg(args, void *);
-				choice[j].f(arg);
-				printf(", ");
-				break;
-			}
-			j++;
+			int i = va_arg(args, int);
+			printf("%d", i);
+
+		} else if (*temp == 'c')
+		{
+			char c = (char)va_arg(args, int);
+			printf("%c", c);
+
+		} else if (*temp == 's')
+		{
+			char *s = va_arg(args, char *);
+			printf("%s", s);
+
+		} else if (*temp == 'f')
+		{
+			float f = (float)va_arg(args, double);
+			printf("%f", f);
 		}
-		i++;
+		temp++;
 	}
 	va_end(args);
 	printf("\n");
 }
-
