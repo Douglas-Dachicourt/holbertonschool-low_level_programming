@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 		{
 			int i = va_arg(args, int);
 
-			printf("%d, ", i);
+			printf("%d", i);
 
 		} else if (*temp == 'c')
 		{
