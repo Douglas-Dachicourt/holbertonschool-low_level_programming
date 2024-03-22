@@ -40,7 +40,11 @@ void print_all(const char * const format, ...)
 
 			printf("%f, ", f);
 		} else if (temp == NULL)
+		{
 			printf(" ");
+			exit(1);
+		}
+
 		temp++;
 	}
 	va_end(args);
