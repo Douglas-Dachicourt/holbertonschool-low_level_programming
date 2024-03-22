@@ -1,80 +1,50 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
 
-typedef struct
-{
-	char *type;
-	void (*f)(void *);
-} v2;
-
-void p_int(void *print)
-{
-	int i = *(int *)print;
-	printf("%d", i);
-}
-void p_c(void *print)
-{
-	char c = *(char *)print;
-	printf("%c", c);
-}
-void p_f(void *print)
-{
-	float f = *(float *)print;
-	printf("%f", f);
-}
-void p_s(void *print)
-{
-	char *s = (char *)print;
-	printf("%s", s);
+void p_c(char c) {
+    printf("%c, ", c);
 }
 
-void print_all(const char * const format, ...)
-{
-    const char *temp = format;
+void p_i(int i) {
+    printf("%d", i);
+}
 
-    v2 choice[] =
-    {
-        {"c", p_c},
-        {"i", p_int},
-        {"s", p_s},
-        {"f", p_f},
-        {NULL, NULL}
-    };
+void p_f(float f) {
+    printf("%f, ", f);
+}
 
+void p_s(char *s) {
+    if (s == NULL) {
+        printf("(nil)");
+    } else {
+        printf("%s, ", s);
+    }
+}
+
+void print_all(const char *format, ...) {
     va_list args;
     va_start(args, format);
 
-    while (*temp)
-    {
-        int i = 0;
-        while (choice[i].type != NULL)
-        {
-            if (choice[i].type[0] == *temp)
-            {
-                if (choice[i].type[0] == 'c') {
-                    char arg = va_arg(args, int);
-                    choice[i].f(&arg);
-					printf(", ");
-                } else if (choice[i].type[0] == 'i') {
-                    int arg = va_arg(args, int);
-                    choice[i].f(&arg);
-                } else if (choice[i].type[0] == 's') {
-                    char *arg = va_arg(args, char *);
-                    choice[i].f(arg);
-					printf(", ");
-                } else if (choice[i].type[0] == 'f') {
-                    double arg = va_arg(args, double);
-                    choice[i].f(&arg);
-					printf(", ");
-                }
+    while (*format) {
+        switch (*format) {
+            case 'c':
+                p_c(va_arg(args, int));
                 break;
-            }
-            i++;
+            case 'i':
+                p_i(va_arg(args, int));
+                break;
+            case 'f':
+                p_f(va_arg(args, double));
+                break;
+            case 's':
+                p_s(va_arg(args, char *));
+                break;
+            default:
+                break;
         }
-        temp++;
+        format++;
     }
+
     va_end(args);
     printf("\n");
 }
