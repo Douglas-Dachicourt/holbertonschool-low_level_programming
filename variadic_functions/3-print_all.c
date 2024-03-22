@@ -20,7 +20,7 @@ void p_s(char *s)
 {
 	if (s == NULL)
 	{
-		printf("(nil)");
+		printf("(nil), ");
 	} else
 	{
 		printf("%s, ", s);
