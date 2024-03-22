@@ -1,21 +1,33 @@
 #include <stdio.h>
 #include <stdarg.h>
-
+/**
+ * p_i - fct qui imprime un int lors de son appel
+ * @i: arg principal
+ */
 void p_i(int i)
 {
 	printf("%d", i);
 }
-
+/**
+ * p_c - fct qui imprime un char lors de son appel
+ * @c: arg principal
+ */
 void p_c(char c)
 {
 	printf("%c, ", c);
 }
-
+/**
+ * p_f - fct qui imprime un float lors de son appel
+ * @f: arg principal
+ */
 void p_f(float f)
 {
 	printf("%f, ", f);
 }
-
+/**
+ * p_s - fct qui imprime une cdc lors de son appel
+ * @s: arg principal
+ */
 void p_s(char *s)
 {
 	if (s == NULL)
@@ -26,13 +38,17 @@ void p_s(char *s)
 		printf("%s, ", s);
 	}
 }
-
+/**
+ * print_all - fct qui imprime tous les arg passés lors de son appel
+ * @format: liste des arguments
+ */
 void print_all(const char *format, ...)
 {
 	va_list args;
+
 	va_start(args, format);
 
-	if(format == NULL)
+	if (format == NULL)
 	{
 		printf("\n");
 		return;
