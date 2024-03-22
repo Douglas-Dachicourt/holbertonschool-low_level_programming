@@ -33,13 +33,16 @@ void print_all(const char * const format, ...)
 
 			if (s != NULL)
 				printf("%s, ", s);
+			else
+			printf("(nil), ");
 
 		} else if (*temp == 'f')
 		{
 			float f = (float)va_arg(args, double);
 
 			printf("%f, ", f);
-		}
+		} else if (temp == NULL)
+			printf(" ");
 		temp++;
 	}
 	va_end(args);
