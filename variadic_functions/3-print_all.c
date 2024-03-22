@@ -18,17 +18,22 @@ void p_f(float f)
 
 void p_s(char *s)
 {
-	if (s != NULL)
+	if (s == NULL)
+	{
+		printf("(nil)");
+	} else
 	{
 		printf("%s, ", s);
-	} else
-		printf("(nil)");
+	}
 }
 
 void print_all(const char *format, ...)
 {
 	va_list args;
 	va_start(args, format);
+
+	if(format == NULL)
+		printf(" ");
 
 	while (*format != '\0')
 	{
