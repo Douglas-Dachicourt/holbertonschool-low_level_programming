@@ -13,7 +13,7 @@ void p_c(char c)
 
 void p_f(float f)
 {
-	printf("%f", f);
+	printf("%f, ", f);
 }
 
 void p_s(char *s)
