@@ -39,7 +39,8 @@ void print_all(const char * const format, ...)
 			float f = (float)va_arg(args, double);
 
 			printf("%f, ", f);
-		}
+		} else if (temp == NULL)
+			printf(" ");
 		temp++;
 	}
 	va_end(args);
