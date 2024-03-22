@@ -1,53 +1,80 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stddef.h>
-/**
- * print_all - fct qui imprime les argmts en fct de leur type de format
- * @format: le format spécifié à respecter
- */
-void print_all(const char * const format, ...)
+#include <stdlib.h>
+
+typedef struct
 {
-	const char *temp = format;
+	char *type;
+	void (*f)(void *);
+} v2;
 
-	va_list args;
-
-	va_start(args, format);
-
-	while (*temp)
-	{
-		if (*temp == 'i')
-		{
-			int i = va_arg(args, int);
-
-			printf("%d", i);
-
-		} else if (*temp == 'c')
-		{
-			char c = (char)va_arg(args, int);
-
-			printf("%c, ", c);
-
-		} else if (*temp == 's')
-		{
-			char *s = va_arg(args, char *);
-
-			if (s != NULL)
-				printf("%s, ", s);
-
-		} else if (*temp == 'f')
-		{
-			float f = (float)va_arg(args, double);
-
-			printf("%f, ", f);
-		} else if (temp == NULL)
-		{
-			printf(" ");
-			exit(1);
-		}
-
-		temp++;
-	}
-	va_end(args);
-	printf("\n");
+void p_int(void *print)
+{
+	int i = *(int *)print;
+	printf("%d", i);
+}
+void p_c(void *print)
+{
+	char c = *(char *)print;
+	printf("%c", c);
+}
+void p_f(void *print)
+{
+	float f = *(float *)print;
+	printf("%f", f);
+}
+void p_s(void *print)
+{
+	char *s = (char *)print;
+	printf("%s", s);
 }
 
+void print_all(const char * const format, ...)
+{
+    const char *temp = format;
+
+    v2 choice[] =
+    {
+        {"c", p_c},
+        {"i", p_int},
+        {"s", p_s},
+        {"f", p_f},
+        {NULL, NULL}
+    };
+
+    va_list args;
+    va_start(args, format);
+
+    while (*temp)
+    {
+        int i = 0;
+        while (choice[i].type != NULL)
+        {
+            if (choice[i].type[0] == *temp)
+            {
+                if (choice[i].type[0] == 'c') {
+                    char arg = va_arg(args, int);
+                    choice[i].f(&arg);
+					printf(", ");
+                } else if (choice[i].type[0] == 'i') {
+                    int arg = va_arg(args, int);
+                    choice[i].f(&arg);
+                } else if (choice[i].type[0] == 's') {
+                    char *arg = va_arg(args, char *);
+                    choice[i].f(arg);
+					printf(", ");
+                } else if (choice[i].type[0] == 'f') {
+                    double arg = va_arg(args, double);
+                    choice[i].f(&arg);
+					printf(", ");
+                }
+                break;
+            }
+            i++;
+        }
+        temp++;
+    }
+    va_end(args);
+    printf("\n");
+}
