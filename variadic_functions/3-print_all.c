@@ -33,7 +33,10 @@ void print_all(const char *format, ...)
 	va_start(args, format);
 
 	if(format == NULL)
-		printf(" ");
+	{
+		printf("(nil)\n");
+		return;
+	}
 
 	while (*format != '\0')
 	{
