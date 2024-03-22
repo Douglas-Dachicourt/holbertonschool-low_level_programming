@@ -33,7 +33,6 @@ void print_all(const char * const format, ...)
 
 			if (s != NULL)
 				printf("%s, ", s);
-			else
 			printf("(nil), ");
 
 		} else if (*temp == 'f')
