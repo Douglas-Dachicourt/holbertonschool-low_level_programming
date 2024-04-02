@@ -1,15 +1,18 @@
 #include "lists.h"
 /**
  * free_list - fct that frees a linked list
- * @head: head node
+ * @head: head node list
  */
 void free_list(list_t *head)
 {
-	head = malloc(sizeof(list_t));
-
-	if (head != NULL)
+	while (head != NULL)
 	{
-		free(head);
+		list_t *temp = head;
+
+		head = head->next;
+
+		free(temp->str);
+		free(temp);
 	}
 
 }
