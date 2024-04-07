@@ -24,12 +24,17 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	ouvrir = open(filename, O_RDWR | O_APPEND);
 	if (ouvrir == -1)
-		return (-0);
-
-	ecrire = write(ouvrir, text_content, len);
-	if (ecrire == -1)
 		return (0);
 
+	if (text_content != NULL)
+	{
+		ecrire = write(ouvrir, text_content, len);
+		if (ecrire == -1)
+		{
+			close(ouvrir);
+			return (0);
+		}
+	}
 	close(ouvrir);
 
 return (1);
