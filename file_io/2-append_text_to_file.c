@@ -11,9 +11,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	int len = 0;
 	int ouvrir, ecrire;
 
-	if (filename)
-		return (1);
-
 	if (!filename)
 		return (-1)
 
