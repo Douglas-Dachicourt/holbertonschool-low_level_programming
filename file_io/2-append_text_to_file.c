@@ -9,7 +9,7 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int i = 0;
 	int len = 0;
-	int ouvrir, ecrire, lire;
+	int ouvrir, ecrire;
 
 	if (!filename)
 		return (-1);
@@ -20,15 +20,13 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		i++;
 		len++;
+
+	return (1);
 	}
 
 	ouvrir = open(filename, O_RDWR | O_APPEND);
 	if (ouvrir == -1)
 		return (-1);
-
-	lire = read(ouvrir, filename, len);
-	if (lire != -1)
-		return (1);
 
 	if (text_content != NULL)
 	{
