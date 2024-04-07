@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- *
- *
- *
- *
+ * append_text_to_file - fct which add text to an end of file
+ * @filename: file to update
+ * @text_content: text to add
+ * Return: 1 if fct succeed
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
@@ -12,19 +12,17 @@ int append_text_to_file(const char *filename, char *text_content)
 	int ouvrir, ecrire;
 
 	if (filename == NULL)
-		return (-1);
+		return (0);
 
 	if (text_content == NULL)
 	{
 		return (-1);
-	} else
+	while (text_content[i] != '\0')
 	{
-		while (text_content[i] != '\0')
-		{
-			i++;
-			len++;
-		}
+		i++;
+		len++;
 	}
+
 	ouvrir = open(filename, O_RDWR | O_APPEND);
 	if (ouvrir == -1)
 		return (-0);
